@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>auto-schedule</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>avg-spend-time</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <scala.major.version>2.11</scala.major.version>
+        <commons.lang3.version>3.8</commons.lang3.version>
+        <fastjson.version>1.2.54</fastjson.version>
+        <spark.current.version>2.4.0</spark.current.version>
+        <hadoop.version>2.6.5</hadoop.version>
+        <cdh.version>6.2.0</cdh.version>
+        <hadoop-cdh.version>${hadoop.version}-${cdh.version}</hadoop-cdh.version>
+        <hutool.version>4.6.1</hutool.version>
+        <hbase.version>1.1.2</hbase.version>
+        <hdp.version>2.6.2.0-205</hdp.version>
+        <hbase-hdp.version>${hbase.version}.${hdp.version}</hbase-hdp.version>
+        <hadoop.version>2.7.3</hadoop.version>
+        <hadoop-hdp.version>${hadoop.version}.${hdp.version}</hadoop-hdp.version>
+        <hadoop.current.version>${hadoop-hdp.version}</hadoop.current.version>
+        <hbase.current.version>${hbase-hdp.version}</hbase.current.version>
+        <jedis.verison>2.9.0</jedis.verison>
+        <jackson.verison>2.6.6</jackson.verison>
+        <commons.logging.version>1.1.1</commons.logging.version>
+        <commons.configuration.version>1.7</commons.configuration.version>
+        <commons.collections.version>3.2.1</commons.collections.version>
+        <guava.version>14.0.1</guava.version>
+        <commons.lang.version>2.6</commons.lang.version>
+        <parquet.hadoop.version>1.10.1</parquet.hadoop.version>
+        <hadoop.common.version>2.7.3</hadoop.common.version>
+        <lombok.version>1.18.8</lombok.version>
+    </properties>
+
+    <repositories>
+        <!-- cloudera 的仓库 -->
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+    </repositories>
+
+
+    <dependencyManagement>
+        <dependencies>
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.hbase</groupId>-->
+<!--                <artifactId>hbase-client</artifactId>-->
+<!--                <version>${hbase.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-streaming-kafka-0-10_${scala.version}</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-sql_${scala.version}</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-graphx_${scala.version}</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-hive_${scala.version}</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-streaming_${scala.version}</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>com.typesafe</groupId>-->
+<!--                <artifactId>config</artifactId>-->
+<!--                <version>${config.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>cn.hutool</groupId>-->
+<!--                <artifactId>hutool-all</artifactId>-->
+<!--                <version>${hutool-all.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>mysql</groupId>-->
+<!--                <artifactId>mysql-connector-java</artifactId>-->
+<!--                <version>${mysql-connector-java.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.phoenix</groupId>-->
+<!--                <artifactId>phoenix-core</artifactId>-->
+<!--                <version>${phoenix.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.commons</groupId>-->
+<!--                <artifactId>commons-lang3</artifactId>-->
+<!--                <version>${commons-lang3.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.slf4j</groupId>-->
+<!--                <artifactId>slf4j-log4j12</artifactId>-->
+<!--                <version>${slf4j-log4j12.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>com.google.guava</groupId>-->
+<!--                <artifactId>guava</artifactId>-->
+<!--                <version>${guava.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>com.oracle</groupId>-->
+<!--                <artifactId>ojdbc6</artifactId>-->
+<!--                <version>${ojdbc6.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>com.fasterxml.jackson.jaxrs</groupId>-->
+<!--                <artifactId>jackson-jaxrs-json-provider</artifactId>-->
+<!--                <version>${jackson-jaxrs-json-provider.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.flume</groupId>-->
+<!--                <artifactId>flume-ng-core</artifactId>-->
+<!--                <version>${flume-ng-core.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.projectlombok</groupId>-->
+<!--                <artifactId>lombok</artifactId>-->
+<!--                <version>${lombok.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>junit</groupId>-->
+<!--                <artifactId>junit</artifactId>-->
+<!--                <version>${junit.version}</version>-->
+<!--                <scope>test</scope>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>it.unimi.dsi</groupId>-->
+<!--                <artifactId>fastutil</artifactId>-->
+<!--                <version>${fastutil.version}</version>-->
+<!--            </dependency>-->
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
